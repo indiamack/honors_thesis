@@ -1,0 +1,269 @@
+@supports (grid-area:auto){
+
+  .site{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 550px auto 500px 10px 200px 100px;
+    grid-template-areas:
+      'hd hd hd hd hd hd hd'
+      'in in in in in in in'
+      'nv nv nv nv nv nv nv'
+      'mn mn mn mn mn mn mn'
+      'ft ft ft ft ft ft ft';
+      animation: fadeIn 0.4s forwards;
+  animation-delay: 0.3s;
+  }
+
+  .flex{
+    display: flex;
+  }
+
+  body{
+    margin: 0;
+  }
+
+
+/* Header ------------------------------ */
+.head{
+  grid-area: hd;
+  justify-content: center;
+  align-items: center;
+  font-family: Head;
+  color: white;
+  flex-direction: column;
+  border: 10px solid #9C9B7A;
+  margin: 20px;
+  letter-spacing: 2px;
+
+}
+
+
+h1,h2{
+  margin:0;
+  line-height: 1em;
+}
+
+.overlayh{
+  background-color: rgba(0,0,0,0.2);
+}
+
+h2{
+  font-family: Byline;
+}
+
+
+#myVideo {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+/* Intro ------------------------------ */
+.intro{
+  grid-area: in;
+  background-color: white;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 50px;
+  padding-bottom: 70px;
+  color: #707070;
+  text-align:justify;
+  flex-direction: column;
+  align-items: center;
+}
+
+h3{
+  font-family: Byline;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.intro>p{
+  font-family: Subhead;
+}
+
+/* Nav ------------------------------ */
+.nav{
+  grid-area: nv;
+  background-color: blue;
+}
+
+
+.overlay{
+  transition: filter .3s ease-in-out;
+  -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+  filter: grayscale(100%); /* FF 35+ */
+}
+
+.overlay:hover {
+  -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+  filter: grayscale(0%); /* FF 35+ */
+  cursor: pointer;
+}
+
+.n1{
+  grid-column: 1/2;
+  background-image: url('../img/climate.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.n2{
+  grid-column: 2/3;
+  background-image: url('../img/art.jpg');
+  background-position: top center;
+  background-size: cover;
+
+}.n3{
+  grid-column: 3/4;
+  background-image: url('../img/bio.jpg');
+  background-position: center;
+  background-size: cover;
+
+}.n4{
+  grid-column: 4/5;
+  background-image: url('../img/prelude.jpg');
+  background-position: center;
+  background-size: cover;
+
+}
+.n5{
+  grid-column: 5/6;
+  background-image: url('../img/bridge.jpg');
+  background-position: center;
+  background-size: cover;
+
+}.n6{
+  grid-column: 6/7;
+  background-image: url('../img/eco.jpg');
+  background-position: center;
+  background-size: cover;
+
+}
+.n7{
+  grid-column: 7/8;
+  background-image: url('../img/house.jpg');
+  background-position: center;
+  background-size: cover;
+
+}
+
+
+
+
+/* Main ------------------------------ */
+.main{
+  grid-area: mn;
+  background-color: #9C9B7A;
+  height: auto;
+  border-bottom: 10px solid #9C9B7A;
+}
+
+#article>h1{
+  font-family: Head;
+  color: #707070;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+#article{
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 10px;
+  padding-bottom: 80px;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  font-family: Subhead;
+  text-align: justify;
+  display: none;
+}
+
+.caption{
+  margin: 0;
+  margin-bottom: 40px;
+  font-style: italic;
+  color: #707070;
+  font-size: 12px;
+}
+
+#mapid{
+  grid-column: 1/8;
+  grid-row:5/6;
+}
+
+img{
+  margin-top: 20px;
+  max-width: 100%;
+}
+/* Footer ------------------------------ */
+.footer{
+  grid-area: ft;
+  grid-row:6/7;
+  background-color:#FFD393;
+  justify-content: center;
+  transition: all 1s ease-in;
+  border-bottom: 10px solid #FFD393;
+}
+
+.footer>h3{
+  font-family:Nav;
+  color: white;
+  margin-top: 30px;
+}
+
+.footer>h3:hover{
+  cursor: pointer;
+}
+
+#about>p{
+  color: white;
+  font-family: Byline;
+  padding-top: 20px;
+  width: 80%;
+  margin: auto;
+}
+
+#about{
+  display: none;
+}
+
+/* Mobile ---------------------------------------------------------------*/
+@media screen and (max-width:767px){
+
+  #myVideo {
+    top: 0;
+    height: 100%;
+    width: auto;
+  }
+
+  #article{
+    padding: 10%;
+  }
+}
+
+/* Fonts -------------------------------------- */
+@font-face {
+  font-family: Head;
+  src: url('../fonts/Alegreya/Alegreya-Bold.ttf');
+}
+
+@font-face {
+  font-family: Nav;
+  src: url('../fonts/Alegreya/Alegreya-Regular.ttf');
+}
+
+@font-face {
+  font-family: Subhead;
+  src: url('../fonts/opensans/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: Byline;
+  src: url('../fonts/opensans/OpenSans-Light.ttf');
+}
+
+
+}
